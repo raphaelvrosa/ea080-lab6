@@ -14,7 +14,6 @@ from argparse import ArgumentParser
 
 import sys
 import os
-import termcolor as T
 import time
 
 setLogLevel('info')
@@ -28,7 +27,7 @@ FLAGS_rogue_as = args.rogue
 ROGUE_AS_NAME = 'R4'
 
 def log(s, col="green"):
-    print T.colored(s, col)
+    info(s)
 
 
 class Router(Switch):
@@ -54,7 +53,7 @@ class Router(Switch):
         self.deleteIntfs()
 
     def log(self, s, col="magenta"):
-        print T.colored(s, col)
+        info(s)
 
 
 class SimpleTopo(Topo):
